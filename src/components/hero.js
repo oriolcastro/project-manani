@@ -13,7 +13,7 @@ const Hero = () => (
     <div
       style={{
         background:
-          'linear-gradient(rgba(252, 237, 0, 0.5),rgba(252, 237, 0, 0.5)), url(../images/fons.jpg)',
+          'linear-gradient(rgba(252, 237, 0, 0.5),rgba(252, 237, 0, 0.5)), url(/fons.jpg)',
         backgroundBlendMode: 'normal',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
