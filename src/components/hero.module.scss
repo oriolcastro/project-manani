@@ -1,0 +1,10 @@
+.heroBackground {
+  background: linear-gradient(rgba(252, 237, 0, 0.5), rgba(252, 237, 0, 0.5)),
+    url(../images/fons.jpg);
+  background-blend-mode: normal;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -128px;
+  margin-bottom: 40px;
+}
