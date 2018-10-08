@@ -5,7 +5,7 @@ const IdeasForm = () => (
   <div id="formulari" style={{ marginBottom: '40px' }}>
     <Container text>
       <Header as="h2">Digues la teva</Header>
-      <Form success>
+      <Form success action="la url de la function" method="POST">
         <Message
           success
           header="Proposta enviada"
