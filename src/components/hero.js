@@ -11,7 +11,7 @@ import styles from './hero.module.scss'
 
 const Hero = () => (
   <div className={styles.heroBackground}>
-    <Container style={{ paddingTop: '12rem' }} text>
+    <Container style={{ paddingTop: '16rem' }} text>
       <Grid centered>
         <Grid.Row>
           <Grid.Column textAlign="justified">

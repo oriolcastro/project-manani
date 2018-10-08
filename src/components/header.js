@@ -8,7 +8,7 @@ const Header = () => (
     textAlign="center"
     style={{ padding: '24px', backgroundColor: 'transparent' }}
   >
-    <Image src={logo} size="tiny" centered verticalAlign="middle" />
+    <Image src={logo} size="small" centered verticalAlign="middle" />
   </Container>
 )
 
