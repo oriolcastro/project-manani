@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Grid, Header, List, Image, Icon } from 'semantic-ui-react'
+import { Grid, Header, List, Image, Icon } from 'semantic-ui-react'
 import LogoCUP from '../images/logoCUP.jpg'
 
 const Footer = () => (
@@ -25,28 +25,44 @@ const Footer = () => (
         </Header>
         <List divided relaxed="very" verticalAlign="middle" inverted>
           <List.Item>
-            <List.Icon name="calendar" size="big" verticalAlign="middle" />
+            <List.Icon
+              name="calendar alternate outline"
+              size="big"
+              verticalAlign="middle"
+            />
             <List.Content inverted>
               <List.Header color="#fff">Dia - 19.00 h</List.Header>
               <List.Description>Lloc de la trobada</List.Description>
             </List.Content>
           </List.Item>
           <List.Item>
-            <List.Icon name="calendar" size="big" verticalAlign="middle" />
+            <List.Icon
+              name="calendar alternate outline"
+              size="big"
+              verticalAlign="middle"
+            />
             <List.Content>
               <List.Header>Dia - 19.00 h</List.Header>
               <List.Description>Lloc de la trobada</List.Description>
             </List.Content>
           </List.Item>
           <List.Item>
-            <List.Icon name="calendar" size="big" verticalAlign="middle" />
+            <List.Icon
+              name="calendar alternate outline"
+              size="big"
+              verticalAlign="middle"
+            />
             <List.Content>
               <List.Header>Dia - 19.00 h</List.Header>
               <List.Description>Lloc de la trobada</List.Description>
             </List.Content>
           </List.Item>
           <List.Item>
-            <List.Icon name="calendar" size="big" verticalAlign="middle" />
+            <List.Icon
+              name="calendar alternate outline"
+              size="big"
+              verticalAlign="middle"
+            />
             <List.Content>
               <List.Header>Dia - 19.00 h</List.Header>
               <List.Description>Lloc de la trobada</List.Description>
@@ -62,19 +78,49 @@ const Footer = () => (
           {'\n'}
           <a href="mailto:vilanova@cup.cat">vilanova@cup.cat</a>
         </p>
-        <a href="http://www.google.es">
-          <Icon name="facebook" size="large" circular inverted />
+        <a
+          href="https://www.facebook.com/cupdevilanova"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          <Icon
+            name="facebook"
+            size="large"
+            circular
+            inverted
+            style={{ marginBottom: '0.5rem' }}
+          />
         </a>
-        <a href="http://www.google.es">
+        <a
+          href="https://twitter.com/cupdevilanova"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          style={{ marginBottom: '0.5rem' }}
+        >
           <Icon name="twitter" size="large" circular inverted />
         </a>
-        <a href="http://www.google.es">
+        <a
+          href="https://www.instagram.com/cupdevilanova/"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          style={{ marginBottom: '0.5rem' }}
+        >
           <Icon name="instagram" size="large" circular inverted />
         </a>
-        <a href="http://www.google.es">
-          <Icon name="telegram" size="large" circular inverted />
+        <a
+          href="http://t.me/cupdevilanova"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          style={{ marginBottom: '0.5rem' }}
+        >
+          <Icon name="telegram plane" size="large" circular inverted />
         </a>
-        <a href="http://www.google.es">
+        <a
+          href="https://www.youtube.com/user/cupdevilanova"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          style={{ marginBottom: '0.5rem' }}
+        >
           <Icon name="youtube" size="large" circular inverted />
         </a>
       </Grid.Column>

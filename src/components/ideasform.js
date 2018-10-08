@@ -5,7 +5,7 @@ const IdeasForm = () => (
   <div id="formulari" style={{ marginBottom: '40px' }}>
     <Container text>
       <Header as="h2">Digues la teva</Header>
-      <Form success>
+      <Form success action="la url de la function" method="POST">
         <Message
           success
           header="Proposta enviada"
@@ -14,13 +14,15 @@ const IdeasForm = () => (
         <Form.Group widths="equal">
           <Form.Input
             label="Nom"
+            name="name"
             placeholder="Carpa Juanita"
-            type="name"
+            type="text"
             required
             fluid
           />
           <Form.Input
             label="Correu electrònic"
+            name="email"
             placeholder="juani@curiositats.mar"
             type="email"
             required
@@ -29,6 +31,7 @@ const IdeasForm = () => (
         </Form.Group>
         <Form.TextArea
           label="Fes la teva proposta"
+          name="message"
           placeholder="Jo crec que Vilanova necessita..."
           required
           autoHeight
