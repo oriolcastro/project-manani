@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Grid,
-  Header,
-  Button,
-  ButtonContent,
-} from 'semantic-ui-react'
+import { Container, Grid, Header, Button } from 'semantic-ui-react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import styles from './hero.module.scss'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Grid, Header, List, Image, Icon } from 'semantic-ui-react'
+import { Grid, Header, List, Image, Icon } from 'semantic-ui-react'
 import LogoCUP from '../images/logoCUP.jpg'
 
 const Footer = () => (
