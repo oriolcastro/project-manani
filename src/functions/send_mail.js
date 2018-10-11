@@ -5,7 +5,7 @@ require('dotenv').config()
 
 exports.handler = function(event, context, callback) {
   if (event.httpMethod !== 'POST') {
-     callback(null, { statusCode: 405, body: 'Method Not Allowed' })
+    callback(null, { statusCode: 405, body: 'Method Not Allowed' })
   }
 
   var auth = {
@@ -19,14 +19,16 @@ exports.handler = function(event, context, callback) {
   const name = params.name
   const email = params.email
   const message = params.message
-  const privacyConcent = {params.hasConfirmedPrivacy} ? 'Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya' : ''
+  const privacyConcent = params.hasConfirmedPrivacy
+    ? 'Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya'
+    : ''
 
   var mailOptions = {
     from: '"CUP Vilanova" vilanova@cup.cat',
     subject: `Moltes gràcies ${name} per la proposta`,
     html: `<div><h3>Hem rebut la teva proposta a través del web www.estemapuntvng.cat</h3><p>Tindrem en compte la teva aportació a l'hora d'elaborar el programa</p>Proposta: ${message}</p></div><div>${privacyConcent}</div>`,
     to: { email },
-    bbc: ''
+    bbc: '',
   }
 
   var transporter = nodemailer.createTransport(mg(auth))
