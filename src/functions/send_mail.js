@@ -4,9 +4,9 @@ import mg from 'nodemailer-mailgun-transport'
 require('dotenv').config()
 
 exports.handler = async (event, context) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' }
-  }
+  // if (event.httpMethod !== 'POST') {
+  //   return { statusCode: 405, body: 'Method Not Allowed' }
+  // }
 
   var auth = {
     auth: {
@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
 
   console.log(name, email, message)
 
-  nodemailerMailgun.sendMail(
+  return nodemailerMailgun.sendMail(
     {
       from: 'myemail@example.com',
       to: { email },
@@ -37,15 +37,19 @@ exports.handler = async (event, context) => {
     },
     error => {
       if (error) {
+        console.log('Error')
         return {
           statusCode: 500,
           body: SON.stringify({ error: error.message }),
         }
+      } else {
+        console.log('Email delivered')
+        return {
+          statusCode: 200,
+          body: 'email_delivered',
+        }
       }
-      return {
-        statusCode: 200,
-        body: 'email_delivered',
-      }
+      r
     }
   )
 }
