@@ -22,36 +22,34 @@ exports.handler = async (event, context, callback) => {
   const name = params.name
   const message = params.message
 
-  return nodemailerMailgun.sendMail(
-    {
-      from: 'myemail@example.com',
-      to: { email },
-      subject: 'Hey you, awesome!',
-      'h:Reply-To': 'reply2this@company.com',
-      //You can use "html:" to send HTML email content. It's magic!
-      html: `<div><h3>Message from ${name}</h3><b>${message}</b></div>`,
-      //You can use "text:" to send plain-text content. It's oldschool!
-      text: 'Hola!',
-    },
-    (error, info) => {
-      if (error) {
-        const response = {
-          statusCode: 500,
-          body: JSON.stringify({
-            error: error.message,
-          }),
+  return nodemailerMailgun
+    .sendMail(
+      {
+        from: 'myemail@example.com',
+        to: { email },
+        subject: 'Hey you, awesome!',
+        'h:Reply-To': 'reply2this@company.com',
+        //You can use "html:" to send HTML email content. It's magic!
+        html: `<div><h3>Message from ${name}</h3><b>${message}</b></div>`,
+        //You can use "text:" to send plain-text content. It's oldschool!
+        text: 'Hola!',
+      },
+      (error, info) => {
+        if (error) {
+          const response = {
+            statusCode: 500,
+            body: JSON.stringify({
+              error: error.message,
+            }),
+          }
         }
-        callback(null, response)
+        const response = {
+          statusCode: 200,
+          body: `email_delivered`,
+        }
       }
-      const response = {
-        statusCode: 200,
-        body: JSON.stringify({
-          message: `email_delivered`,
-        }),
-      }
-      callback(null, response)
-    }
-  )
+    )
+    .then(response => callback(null, response))
 }
 
 //Afegir gestió de dotenv per credencials mailgun
