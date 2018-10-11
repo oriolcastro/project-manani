@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
   return {
     statusCode: 200,
     body: `Email sended to ${email}`,
-  })
+  }
   // nodemailerMailgun
   //   .sendMail(
   //     {
