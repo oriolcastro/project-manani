@@ -18,10 +18,15 @@ class IdeasForm extends Component {
   }
 
   handleSubmit(event) {
-    const data = JSON.stringify(this.state)
+    const data = this.state
     console.log(data)
     axios
-      .post('/.netlify/functions/send_idea', data)
+      .post('/.netlify/functions/send_idea', {
+        name: data.name,
+        email: data.email,
+        message: data.message,
+        hasConfirmedPrivacy: data.hasConfirmedPrivacy,
+      })
       .then(function(response) {
         console.log(response)
       })
