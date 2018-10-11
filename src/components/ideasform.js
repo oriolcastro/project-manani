@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Form, Message, Header } from 'semantic-ui-react'
 import axios from 'axios'
+import querystring from 'querystring'
 import styles from './ideasform.module.scss'
 
 class IdeasForm extends Component {
@@ -17,7 +18,7 @@ class IdeasForm extends Component {
   }
 
   handleSubmit(event) {
-    const data = this.state
+    const data = JSON.stringify(this.state)
     console.log(data)
     axios
       .post('/.netlify/functions/send_idea', data)
