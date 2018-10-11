@@ -18,8 +18,8 @@ exports.handler = function(event, context, callback) {
   var mailOptions = {
     from: 'test@test.com',
     subject: 'Test subject',
-    html: `<div><h3>Message from ${event.name}</h3><b>${
-      event.message
+    html: `<div><h3>Message from ${event.body.name}</h3><b>${
+      event.body.message
     }</b></div>`,
     to: 'uri875@gmail.com',
   }
@@ -31,7 +31,7 @@ exports.handler = function(event, context, callback) {
   const name = params.name
   const email = params.email
   const message = params.message
-  console.log(name, email, message)
+  console.log(params.name)
 
   transporter.sendMail(mailOptions, function(err, info) {
     if (err) {
