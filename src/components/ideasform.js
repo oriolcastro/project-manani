@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Form, Message, Header } from 'semantic-ui-react'
 import axios from 'axios'
-import querystring from 'querystring'
+
 import styles from './ideasform.module.scss'
 
 class IdeasForm extends Component {
