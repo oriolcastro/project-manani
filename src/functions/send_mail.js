@@ -1,9 +1,9 @@
-import querystring from 'querystring'
-import nodemailer from 'nodemailer'
-import mg from 'nodemailer-mailgun-transport'
+var nodemailer = require("nodemailer")
+var mg = require("nodemailer-mailgun-transport")
+
 require('dotenv').config()
 
-exports.handler = async (event, context) => {
+exports.handler = function (event, context, callback) {
   // if (event.httpMethod !== 'POST') {
   //   return { statusCode: 405, body: 'Method Not Allowed' }
   // }
@@ -15,39 +15,33 @@ exports.handler = async (event, context) => {
     },
   }
 
-  const nodemailerMailgun = nodemailer.createTransport(mg(auth))
+  var mailOptions = {
+    from: 'test@test.com',
+    subject: 'Test subject',
+    html: `<div><h3>Message from ${event.name}</h3><b>${event.message}</b></div>`,
+    to: 'uri875@gmail.com'
+  }
+
+  var transporter = nodemailer.createTransport(mg(auth))
+
   const params = event.body
   console.log(params)
-  const name = params.name
+  const name = {params.name}
   const email = params.email
   const message = params.message
   console.log(name, email, message)
 
-  return nodemailerMailgun.sendMail(
-    {
-      from: 'myemail@example.com',
-      to: 'uri875@gmail.com',
-      subject: 'Hey you, awesome!',
-      'h:Reply-To': 'reply2this@company.com',
-      //       //You can use "html:" to send HTML email content. It's magic!
-      html: `<div><h3>Message from ${name}</h3><b>${message}</b></div>`,
-      //       //You can use "text:" to send plain-text content. It's oldschool!
-      text: 'Hola!',
-    },
-    error => {
-      if (error) {
-        console.log('Error')
-        return {
-          statusCode: 500,
-          body: JSON.stringify({ error: error.message }),
-        }
-      } else {
-        console.log('Email delivered')
-        return {
-          statusCode: 200,
-          body: 'email_delivered',
-        }
-      }
+  transporter.sendMail(mailOptions, function (err, info) {
+    if (err){
+      console.log("Error sending mail")
+      callback(err);
+
+    }else {
+      console.log("Email sent successfully");
+      callback(null, {
+        statusCode: 200,
+        body: 'sucess'
+      });
     }
-  )
+  });
 }
