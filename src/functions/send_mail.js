@@ -1,5 +1,6 @@
 var nodemailer = require('nodemailer')
 var mg = require('nodemailer-mailgun-transport')
+import querystring from 'querystring'
 
 require('dotenv').config()
 
@@ -15,23 +16,22 @@ exports.handler = function(event, context, callback) {
     },
   }
 
+  const params = querystring.parse(event.body)
+  console.log(params)
+
+  const name = params.name
+  const email = params.email
+  const message = params.message
+  console.log(name)
+
   var mailOptions = {
     from: 'test@test.com',
     subject: 'Test subject',
-    html: `<div><h3>Message from ${event.body.name}</h3><b>${
-      event.body.message
-    }</b></div>`,
+    html: `<div><h3>Message from ${name}</h3><b>${message}</b></div>`,
     to: 'uri875@gmail.com',
   }
 
   var transporter = nodemailer.createTransport(mg(auth))
-
-  const params = event.body
-  console.log(params)
-  const name = params.name
-  const email = params.email
-  const message = params.message
-  console.log(params.name)
 
   transporter.sendMail(mailOptions, function(err, info) {
     if (err) {
