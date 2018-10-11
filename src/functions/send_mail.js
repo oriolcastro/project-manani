@@ -24,11 +24,12 @@ exports.handler = function(event, context, callback) {
     : ''
 
   var mailOptions = {
-    from: '"CUP Vilanova" vilanova@cup.cat',
+    from: '"CUP de Vilanova" vilanova@cup.cat',
     subject: `Moltes gràcies ${name} per la proposta`,
-    html: `<div><h3>Hem rebut la teva proposta a través del web www.estemapuntvng.cat</h3><p>Tindrem en compte la teva aportació a l'hora d'elaborar el programa</p>Proposta: ${message}</p></div><div>${privacyConcent}</div>`,
-    to: email,
-    bbc: '',
+    html: `<div><h5>Hem rebut aquesta proposta a través del web www.estemapuntvng.cat</h5><p>Moltes gràcies ${name} per la teva participació. Tindrem en compte la teva aportació a l'hora d'elaborar el programa</p>Proposta: ${message}</p><p>${privacyConcent}</p></div>`,
+    //html: ``,
+    to: `"${name}" ${email}`,
+    bbc: 'oriol.castroarnau@gmail.com',
   }
 
   var transporter = nodemailer.createTransport(mg(auth))
