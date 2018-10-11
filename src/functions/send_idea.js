@@ -12,7 +12,7 @@ var auth = {
 
 var nodemailerMailgun = nodemailer.createTransport(mg(auth))
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event, context) => {
   // Only allow POST
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' }
@@ -22,7 +22,7 @@ exports.handler = async (event, context, callback) => {
   const name = params.name
   const message = params.message
 
-  callback(null, {
+  return {
     statusCode: 200,
     body: `Email sended to ${email}`,
   })
