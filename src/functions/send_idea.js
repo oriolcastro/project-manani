@@ -31,7 +31,7 @@ exports.handler = async (event, context, callback) => {
       //You can use "html:" to send HTML email content. It's magic!
       html: `<div><h3>Message from ${name}</h3><b>${message}</b></div>`,
       //You can use "text:" to send plain-text content. It's oldschool!
-      text: 'HEY!',
+      text: 'Hola!',
     },
     (error, info) => {
       if (error) {
