@@ -22,7 +22,7 @@ exports.handler = async (event, context, callback) => {
   const name = params.name
   const message = params.message
 
-  return nodemailerMailgun
+  nodemailerMailgun
     .sendMail(
       {
         from: 'myemail@example.com',
@@ -34,7 +34,7 @@ exports.handler = async (event, context, callback) => {
         //You can use "text:" to send plain-text content. It's oldschool!
         text: 'Hola!',
       },
-      (error, info) => {
+      error => {
         if (error) {
           const response = {
             statusCode: 500,
