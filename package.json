@@ -13,6 +13,8 @@
     "gatsby-plugin-sass": "^2.0.1",
     "netlify-lambda": "^1.0.1",
     "node-sass": "^4.9.3",
+    "nodemailer": "^4.6.8",
+    "nodemailer-mailgun-transport": "^1.4.0",
     "react": "^16.5.2",
     "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-dom": "^16.5.2",
@@ -37,8 +39,6 @@
   "devDependencies": {
     "concurrently": "^4.0.1",
     "dotenv": "^6.1.0",
-    "nodemailer": "^4.6.8",
-    "nodemailer-mailgun-transport": "^1.4.0",
     "prettier": "^1.14.3"
   }
 }
