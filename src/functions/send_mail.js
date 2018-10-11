@@ -16,14 +16,16 @@ exports.handler = async (event, context) => {
   }
   console.log(auth)
 
-  var nodemailerMailgun = nodemailer.createTransport(mg(auth))
-
+  const nodemailerMailgun = nodemailer.createTransport(mg(auth))
+  console.log(event)
+  console.log(event.body)
   const params = querystring.parse(event.body)
+  console.log(params)
   const name = params.name
   const email = params.email
   const message = params.message
 
-  console.log(name, email, message)
+  console.log(event)
 
   return nodemailerMailgun.sendMail(
     {
@@ -41,7 +43,7 @@ exports.handler = async (event, context) => {
         console.log('Error')
         return {
           statusCode: 500,
-          body: SON.stringify({ error: error.message }),
+          body: JSON.stringify({ error: error.message }),
         }
       } else {
         console.log('Email delivered')
