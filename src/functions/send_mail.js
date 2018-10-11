@@ -14,20 +14,21 @@ exports.handler = async (event, context) => {
       domain: process.env.MAILGUN_DOMAIN,
     },
   }
+  console.log(auth)
 
   var nodemailerMailgun = nodemailer.createTransport(mg(auth))
 
   const params = querystring.parse(event.body)
-  const name = params.name || 'Test'
-  const email = params.email || 'test@test.com'
-  const message = params.message || 'This is a test'
+  const name = params.name
+  const email = params.email
+  const message = params.message
 
   console.log(name, email, message)
 
   return nodemailerMailgun.sendMail(
     {
       from: 'myemail@example.com',
-      to: { email },
+      to: 'uri875@gmail.com',
       subject: 'Hey you, awesome!',
       'h:Reply-To': 'reply2this@company.com',
       //       //You can use "html:" to send HTML email content. It's magic!
@@ -49,7 +50,6 @@ exports.handler = async (event, context) => {
           body: 'email_delivered',
         }
       }
-      r
     }
   )
 }
