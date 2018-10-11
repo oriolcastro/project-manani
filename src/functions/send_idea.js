@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer'
 import mg from 'nodemailer-mailgun-transport'
 import querystring from 'querystring'
+
 require('dotenv').config()
 
 var auth = {
@@ -18,10 +19,11 @@ exports.handler = async (event, context) => {
     return { statusCode: 405, body: 'Method Not Allowed' }
   }
   const params = querystring.parse(event.body)
+  console.log(params)
   const email = params.email
   const name = params.name
   const message = params.message
-
+  console.log(email)
   return {
     statusCode: 200,
     body: `Email sended to ${email}`,
