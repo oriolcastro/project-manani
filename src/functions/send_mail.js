@@ -27,7 +27,7 @@ exports.handler = function(event, context, callback) {
     from: '"CUP Vilanova" vilanova@cup.cat',
     subject: `Moltes gràcies ${name} per la proposta`,
     html: `<div><h3>Hem rebut la teva proposta a través del web www.estemapuntvng.cat</h3><p>Tindrem en compte la teva aportació a l'hora d'elaborar el programa</p>Proposta: ${message}</p></div><div>${privacyConcent}</div>`,
-    to: { email },
+    to: email,
     bbc: '',
   }
 
