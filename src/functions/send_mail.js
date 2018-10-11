@@ -1,13 +1,12 @@
 var nodemailer = require('nodemailer')
 var mg = require('nodemailer-mailgun-transport')
-import querystring from 'querystring'
 
 require('dotenv').config()
 
 exports.handler = function(event, context, callback) {
-  // if (event.httpMethod !== 'POST') {
-  //   return { statusCode: 405, body: 'Method Not Allowed' }
-  // }
+  if (event.httpMethod !== 'POST') {
+     callback(null, { statusCode: 405, body: 'Method Not Allowed' })
+  }
 
   var auth = {
     auth: {
@@ -17,18 +16,17 @@ exports.handler = function(event, context, callback) {
   }
 
   const params = JSON.parse(event.body)
-  console.log(params)
-
   const name = params.name
   const email = params.email
   const message = params.message
-  console.log(name)
+  const privacyConcent = {params.hasConfirmedPrivacy} ? 'Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya' : ''
 
   var mailOptions = {
-    from: 'test@test.com',
-    subject: 'Test subject',
-    html: `<div><h3>Message from ${name}</h3><b>${message}</b></div>`,
-    to: 'uri875@gmail.com',
+    from: '"CUP Vilanova" vilanova@cup.cat',
+    subject: `Moltes gràcies ${name} per la proposta`,
+    html: `<div><h3>Hem rebut la teva proposta a través del web www.estemapuntvng.cat</h3><p>Tindrem en compte la teva aportació a l'hora d'elaborar el programa</p>Proposta: ${message}</p></div><div>${privacyConcent}</div>`,
+    to: { email },
+    bbc: ''
   }
 
   var transporter = nodemailer.createTransport(mg(auth))
