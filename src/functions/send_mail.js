@@ -16,7 +16,7 @@ exports.handler = function(event, context, callback) {
     },
   }
 
-  const params = querystring.parse(event.body)
+  const params = JSON.parse(event.body)
   console.log(params)
 
   const name = params.name
