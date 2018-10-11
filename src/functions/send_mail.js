@@ -16,10 +16,11 @@ exports.handler = async (event, context) => {
   }
 
   const nodemailerMailgun = nodemailer.createTransport(mg(auth))
-
-  const name = event.body.name
-  const email = event.body.email
-  const message = event.body.message
+  const params = event.body
+  console.log(params)
+  const name = params.name
+  const email = params.email
+  const message = params.message
   console.log(name, email, message)
 
   return nodemailerMailgun.sendMail(
