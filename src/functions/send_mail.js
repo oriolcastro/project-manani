@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 import mg from 'nodemailer-mailgun-transport'
 require('dotenv').config()
 
-exports.handler = function(event, context, callback) {
+exports.handler = async (event, context) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' }
   }
@@ -37,15 +37,15 @@ exports.handler = function(event, context, callback) {
     },
     error => {
       if (error) {
-        callback(null, {
+        return {
           statusCode: 500,
           body: SON.stringify({ error: error.message }),
-        })
+        }
       }
-      callback(null, {
+      return {
         statusCode: 200,
         body: 'email_delivered',
-      })
+      }
     }
   )
 }
