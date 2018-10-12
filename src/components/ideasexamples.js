@@ -5,11 +5,7 @@ import '../../node_modules/slick-carousel/slick/slick.css'
 import '../../node_modules/slick-carousel/slick/slick-theme.css'
 
 const CarouselItem = props => (
-  <Segment
-    color="yellow"
-    textAlign="justified"
-    style={{ margin: '0px 8px 0px 8px' }}
-  >
+  <Segment color="yellow" style={{ margin: '0px 8px 0px 8px' }}>
     <Header>{props.name}</Header>
     <p>{props.message}</p>
   </Segment>
@@ -17,25 +13,30 @@ const CarouselItem = props => (
 
 const propostes = [
   {
+    id: '01',
     name: 'Joan',
     message:
       "Assegurar un espai jove des del maig del 2019 fins a la construcció de l'espai definitiu",
   },
   {
+    id: '02',
     name: 'Anna',
     message:
       "Descentralitzar l'OAC per tal que la ciutadania pugui fer tràmits i gestions municipals a través de la xarxa de centres cívics",
   },
   {
+    id: '03',
     name: 'Raul',
     message: 'Crear un rocòdrom popular en un espai obert de la ciutat',
   },
   {
+    id: '04',
     name: 'Marta',
     message:
       "Crear un Parc Agrari al Sant Jordi i a l'Eixample Nord. Recuperar els sols fèrtils i les antigues sínies",
   },
   {
+    id: '05',
     name: 'Helena',
     message:
       'Tornar al pla original de peatonalització del centre prohibint el pas de vehicles i evitant així el seu deteriorament',
@@ -48,11 +49,9 @@ const settings = {
   autoplaySpeed: 5000,
   pauseOnHover: true,
   infinite: true,
-  className: 'mySlider',
   centerMode: true,
   dots: true,
   slidesToShow: 3,
-  slidesToScroll: 3,
   initialSlide: 0,
   responsive: [
     {
@@ -65,7 +64,6 @@ const settings = {
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
-        className: 'mySlider',
       },
     },
   ],
@@ -75,7 +73,7 @@ const IdeasExample = () => (
     <Header as="h2">Algunes propostes</Header>
     <Slider {...settings}>
       {propostes.map(i => (
-        <CarouselItem name={i.name} message={i.message} />
+        <CarouselItem key={i.id} name={i.name} message={i.message} />
       ))}
     </Slider>
   </Container>
