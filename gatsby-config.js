@@ -1,5 +1,5 @@
 require('dotenv').config()
-import config from './src/meta/siteConfig'
+const config = require('./src/meta/siteConfig')
 
 module.exports = {
   siteMetadata: {
