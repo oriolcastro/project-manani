@@ -7,10 +7,10 @@ module.exports = {
   siteUrl: 'https://www.estemapuntvng.cat',
   shortTitle: 'CUP Vng',
   userTwitter: '@cupdevilanova',
-  shareImage: 'src/images/share.jpg',
+  shareImage: '/images/share.jpg',
   shareImageWidth: 1024,
   shareImageHeight: 650,
-  siteLogo: 'src/images/logo.png',
+  siteLogo: '/images/logo.png',
   backgroundColor: '#FCED00',
   themeColor: '#FCED00',
 }

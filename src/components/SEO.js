@@ -24,6 +24,7 @@ class SEO extends Component {
     return (
       <Helmet>
         {/* General tags */}
+        <title>{config.siteTitle}</title>
         <meta name="image" content={image} />
         <meta name="description" content={description} />
         {/* Schema.org tags */}
