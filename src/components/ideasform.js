@@ -23,7 +23,7 @@ class IdeasForm extends Component {
     const data = this.state
     console.log(data)
     axios
-      .post('/.netlify/functions/send_mail', {
+      .post('.netlify/functions/send_mail', {
         name: data.name,
         email: data.email,
         message: data.message,
