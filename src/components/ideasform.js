@@ -23,7 +23,7 @@ class IdeasForm extends Component {
     const data = this.state
     console.log(data)
     axios
-      .post(`${process.env.LAMBDA_FUNCTION_SENDMAIL_ENDPOINT}`, {
+      .post('/.netlify/functions/send_mail', {
         name: data.name,
         email: data.email,
         message: data.message,
