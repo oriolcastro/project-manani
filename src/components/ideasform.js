@@ -11,7 +11,9 @@ class IdeasForm extends Component {
       name: '',
       email: '',
       message: '',
-      hasConfirmedPrivacy: false,
+      subscribeCampaignInfo: false,
+      subscribeGeneralInfo: false,
+      formSuccess: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -21,19 +23,29 @@ class IdeasForm extends Component {
     const data = this.state
     console.log(data)
     axios
-      .post('/.netlify/functions/send_mail', {
+      .post(process.env.LAMBDA_FUNCTION_SENDMAIL_ENDPOINT, {
         name: data.name,
         email: data.email,
         message: data.message,
-        hasConfirmedPrivacy: data.hasConfirmedPrivacy,
+        subscribeCampaignInfo: data.subscribeCampaignInfo,
+        subscribeGeneralInfo: data.subscribeGeneralInfo,
       })
       .then(function(response) {
         console.log(response)
+        {
+          response === 'success' && this.setState({ formSuccess: true })
+        }
       })
       .catch(function(error) {
         console.log(error)
       })
-    //Al final fer setState a blanc
+    this.setState({
+      name: '',
+      email: '',
+      message: '',
+      subscribeCampaignInfo: false,
+      subscribeGeneralInfo: false,
+    })
   }
 
   handleChange(event) {
@@ -49,7 +61,7 @@ class IdeasForm extends Component {
       <div id="formulari" style={{ marginBottom: '40px' }}>
         <Container text>
           <Header as="h2">Digues la teva</Header>
-          <Form success onSubmit={this.handleSubmit}>
+          <Form success={this.state.formSuccess} onSubmit={this.handleSubmit}>
             <Message
               success
               header="Proposta enviada"
@@ -87,11 +99,20 @@ class IdeasForm extends Component {
               autoHeight
             />
             <Form.Field
-              label="bla bla bla"
+              label="Vull rebre informació sobre l'elaboració del programa electoral i la campanya de la CUP per a les eleccions municipals 2019 al meu correu electrònic"
               type="checkbox"
               control="input"
-              name="hasConfirmedPrivacy"
-              value={this.state.hasConfirmedPrivacy}
+              name="subscribeCampaignInfo"
+              value={this.state.subscribeCampaignInfo}
+              onChange={this.handleChange}
+              className={styles.myCheckbox}
+            />
+            <Form.Field
+              label="Vull rebre informació general sobre l'activitat de la CUP de Vilanova al meu correu electrònic"
+              type="checkbox"
+              control="input"
+              name="subscribeGeneralInfo"
+              value={this.state.susbcribeGeneralInfo}
               onChange={this.handleChange}
               className={styles.myCheckbox}
             />
@@ -100,6 +121,7 @@ class IdeasForm extends Component {
               Envia
             </Form.Button>
           </Form>
+          {/* TODO:Afegir informació tractament de dades */}
         </Container>
       </div>
     )

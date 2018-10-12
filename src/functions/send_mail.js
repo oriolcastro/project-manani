@@ -19,14 +19,17 @@ exports.handler = function(event, context, callback) {
   const name = params.name
   const email = params.email
   const message = params.message
-  const privacyConcent = params.hasConfirmedPrivacy
-    ? 'Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya'
+  const subscribeCampaignInfo = params.subscribeCampaignInfo
+    ? 'Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya electoral'
+    : ''
+  const subscribeGeneralInfo = params.subscribeGeneralInfo
+    ? 'Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació de les activitats, trobades i campanyes de la CUP de Vilanova.'
     : ''
 
   var mailOptions = {
-    from: '"CUP de Vilanova" vilanova@cup.cat',
+    from: 'CUP de Vilanova <vilanova@cup.cat>',
     subject: `Moltes gràcies ${name} per la proposta`,
-    html: `<div><h5>Hem rebut aquesta proposta a través del web www.estemapuntvng.cat</h5><p>Moltes gràcies ${name} per la teva participació. Tindrem en compte la teva aportació a l'hora d'elaborar el programa</p>Proposta: ${message}</p><p>${privacyConcent}</p></div>`,
+    html: `<div><p>Moltes gràcies ${name} per la teva participació!</p><p>Hem rebut la teva proposta a través del web www.estemapuntvng.cat. La tindrem en compte a l'hora d'elaborar el programa</p><p style="font-weight:bold">Proposta:</p><p style="font-style:italic">${message}</p><p>${subscribeCampaignInfo}</p><p>${subscribeGeneralInfo}</p></div>`,
     to: `"${name}" ${email}`,
     bbc: 'oriol.castroarnau@gmail.com',
   }
@@ -41,7 +44,7 @@ exports.handler = function(event, context, callback) {
       console.log('Email sent successfully')
       callback(null, {
         statusCode: 200,
-        body: 'sucess',
+        body: 'success',
       })
     }
   })
