@@ -71,10 +71,22 @@ const Footer = () => (
         </List>
       </Grid.Column>
       <Grid.Column>
-        <Image src={LogoCUP} size="tiny" style={{ marginBottom: '24px' }} />
+        <Image
+          src={LogoCUP}
+          size="tiny"
+          style={{ marginBottom: '24px' }}
+          alt=""
+        />
         <p style={{ whiteSpace: 'pre-wrap' }}>
           Ateneu Vilanoví (Plaça Llarga, 19 baixos) {'\n'}
-          <a href="http://www.cupvilanova.cat">www.cupvilanova.cat</a>
+          <a
+            href="http://www.cupvilanova.cat"
+            title="Pàgina web de la CUP"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >
+            www.cupvilanova.cat
+          </a>
           {'\n'}
           <a href="mailto:vilanova@cup.cat">vilanova@cup.cat</a>
         </p>
@@ -82,6 +94,7 @@ const Footer = () => (
           href="https://www.facebook.com/cupdevilanova"
           rel="nofollow noopener noreferrer"
           target="_blank"
+          title="Pàgina de Facebook de la CUP"
         >
           <Icon
             name="facebook"
@@ -95,6 +108,7 @@ const Footer = () => (
           href="https://twitter.com/cupdevilanova"
           rel="nofollow noopener noreferrer"
           target="_blank"
+          title="COmpte de Twitter de la CUP"
           style={{ marginBottom: '0.5rem' }}
         >
           <Icon name="twitter" size="large" circular inverted />
@@ -103,6 +117,7 @@ const Footer = () => (
           href="https://www.instagram.com/cupdevilanova/"
           rel="nofollow noopener noreferrer"
           target="_blank"
+          title="Compte d'Instagram de la CUP"
           style={{ marginBottom: '0.5rem' }}
         >
           <Icon name="instagram" size="large" circular inverted />
@@ -111,6 +126,7 @@ const Footer = () => (
           href="http://t.me/cupdevilanova"
           rel="nofollow noopener noreferrer"
           target="_blank"
+          title="Canal de Telegram de la CUP"
           style={{ marginBottom: '0.5rem' }}
         >
           <Icon name="telegram plane" size="large" circular inverted />
@@ -119,6 +135,7 @@ const Footer = () => (
           href="https://www.youtube.com/user/cupdevilanova"
           rel="nofollow noopener noreferrer"
           target="_blank"
+          title="Canal al Youtube de la CUP"
           style={{ marginBottom: '0.5rem' }}
         >
           <Icon name="youtube" size="large" circular inverted />
