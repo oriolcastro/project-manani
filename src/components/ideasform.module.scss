@@ -1,0 +1,14 @@
+.myCheckbox input {
+  width: 17px;
+  height: 17px;
+  content: '';
+  background: #fff;
+  border-radius: 0.21428571rem;
+  transition: border 0.1s ease, opacity 0.1s ease, box-shadow 0.1s ease,
+    -webkit-transform 0.1s ease;
+  transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease,
+    box-shadow 0.1s ease;
+  transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease,
+    box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  border: 1px solid #d4d4d5;
+}
