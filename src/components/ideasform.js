@@ -31,10 +31,7 @@ class IdeasForm extends Component {
         subscribeGeneralInfo: data.subscribeGeneralInfo,
       })
       .then(function(response) {
-        console.log(response.data)
-        {
-          response.data === 'success' && this.setState({ formSuccess: true })
-        }
+        console.log({response.data})
       })
       .catch(function(error) {
         console.log(error)
@@ -45,6 +42,7 @@ class IdeasForm extends Component {
       message: '',
       subscribeCampaignInfo: false,
       subscribeGeneralInfo: false,
+      formSuccess: true,
     })
   }
 
