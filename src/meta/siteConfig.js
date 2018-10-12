@@ -10,7 +10,6 @@ module.exports = {
   shareImage: '/images/share.jpg',
   shareImageWidth: 1024,
   shareImageHeight: 650,
-  siteLogo: '/src/logo.png',
   backgroundColor: '#FCED00',
   themeColor: '#FCED00',
 }
