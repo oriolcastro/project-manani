@@ -31,9 +31,9 @@ class IdeasForm extends Component {
         subscribeGeneralInfo: data.subscribeGeneralInfo,
       })
       .then(function(response) {
-        console.log(response)
+        console.log(response.data)
         {
-          response === 'success' && this.setState({ formSuccess: true })
+          response.data === 'success' && this.setState({ formSuccess: true })
         }
       })
       .catch(function(error) {

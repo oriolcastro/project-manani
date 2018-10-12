@@ -20,16 +20,16 @@ exports.handler = function(event, context, callback) {
   const email = params.email
   const message = params.message
   const subscribeCampaignInfo = params.subscribeCampaignInfo
-    ? 'Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya electoral'
+    ? '<li>Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya electoral.</li>'
     : ''
   const subscribeGeneralInfo = params.subscribeGeneralInfo
-    ? 'Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació de les activitats, trobades i campanyes de la CUP de Vilanova.'
+    ? '<li>Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació de les activitats, trobades i campanyes de la CUP de Vilanova.</li>'
     : ''
 
   var mailOptions = {
     from: 'CUP de Vilanova <vilanova@cup.cat>',
     subject: `Moltes gràcies ${name} per la proposta`,
-    html: `<div><p>Moltes gràcies ${name} per la teva participació!</p><p>Hem rebut la teva proposta a través del web www.estemapuntvng.cat. La tindrem en compte a l'hora d'elaborar el programa</p><p style="font-weight:bold">Proposta:</p><p style="font-style:italic">${message}</p><p>${subscribeCampaignInfo}</p><p>${subscribeGeneralInfo}</p></div>`,
+    html: `<div><p>Moltes gràcies ${name} per la teva participació!</p><p>Hem rebut la teva proposta a través del web www.estemapuntvng.cat. La tindrem en compte a l'hora d'elaborar el programa.</p><p style="font-weight:bold">Proposta:</p><p style="font-style:italic">${message}</p><p>Informació de privacitat:<p><ul>${subscribeCampaignInfo}${subscribeGeneralInfo}</ul></div>`,
     to: `"${name}" ${email}`,
     bbc: 'oriol.castroarnau@gmail.com',
   }
