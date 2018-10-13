@@ -59,7 +59,11 @@ class IdeasForm extends Component {
       <div id="formulari" style={{ marginBottom: '40px' }}>
         <Container text>
           <Header as="h2">Digues la teva</Header>
-          <Form success={this.state.formSuccess} onSubmit={this.handleSubmit}>
+          <Form
+            success={this.state.formSuccess}
+            onSubmit={this.handleSubmit}
+            style={{ marginBottom: '40px' }}
+          >
             <Message
               success
               header="Proposta enviada"
@@ -119,7 +123,22 @@ class IdeasForm extends Component {
               Envia
             </Form.Button>
           </Form>
-          {/* TODO:Afegir informació tractament de dades */}
+          <p style={{ marginBottom: '8px' }}>Política de privacitat</p>
+          <p style={{ fontSize: '0.85rem', whiteSpace: 'pre-wrap' }}>
+            <b>Responsable: </b> La Candidatura d'Unitat Popular (CUP) de
+            Vilanova i la Geltrú és la responsable del tractament d'aquestes
+            dades. {'\n'}
+            <b>Finalitat: </b> Les dades seran utilitzades per enviar informació
+            sobre les activitats i accions de la CUP en cas de consentiment
+            exprés. {'\n'}
+            <b>Destinataris: </b> Les dades no seran cedides a tercers en cap
+            cas. {'\n'}
+            <b>Legitimació: </b> L'usuari expressa el seu consentiment en marcar
+            les caselles del formulari. {'\n'}
+            <b>Drets: </b> Podeu exercir els vostres drets d'accés,
+            rectificació, limitació o supressió de les dades a vilanova@cup.cat.{' '}
+            {'\n'}
+          </p>
         </Container>
       </div>
     )
