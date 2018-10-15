@@ -42,6 +42,8 @@ exports.handler = function(event, context, callback) {
       callback(err)
     } else {
       console.log('Email sent successfully')
+      console.log(mailOptions)
+      console.log(info)
       callback(null, {
         statusCode: 200,
         body: 'success',
