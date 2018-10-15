@@ -15,19 +15,30 @@ const Hero = () => (
               style={{ fontWeight: '400' }}
               inverted
             >
-              VILANOVA TÉ UN POTENCIAL AMPLI DE TRANSFORMACIÓ!
+              ESTEM A PUNT!
             </Header>
             <Header
-              size="medium"
+              size="tiny"
               inverted
-              style={{ whiteSpace: 'pre-wrap', width: '90%', margin: 'auto' }}
+              textAlign="justified"
+              style={{
+                whiteSpace: 'pre-wrap',
+                width: '90%',
+                margin: 'auto',
+                textAlignLast: 'left',
+              }}
             >
-              Milers de persones en aquesta ciutat aixequen l'alternativa cada
-              dia des de molts fronts diferents: feminisme, ecologisme, dret a
-              l'habitatge, programant cultura...
+              Les eleccions de 2019 són una oportunitat única per començar a
+              construir una altra Vilanova i la Geltrú possible, una ciutat que
+              aprofiti tot el potencial de transformació que la ciutadania
+              demostra dia rere dia des de mil fronts diferents.
               {'\n'}
               {'\n'}
-              Es per això que creiem que estem a punt.{' '}
+              Aquest és un espai per rebre propostes i confeccionar
+              horitzontalment el millor programa polític possible i aixecar una
+              ciutat integradora, feminista, socialment justa, urbanísticament
+              responsable i on la ciutadania sempre tingui l’última paraula.
+              {'\n'}
             </Header>
           </Grid.Column>
         </Grid.Row>
