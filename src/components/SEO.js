@@ -33,7 +33,6 @@ class SEO extends Component {
         </script>
         {/* OpenGraph tags */}
         <meta property="og:title" content={title} />
-
         <meta property="og:url" content={pageUrl} />
         <meta property="og:image" content={image} />
         <meta property="og:image:width" content={imgWidth} />

@@ -2,6 +2,63 @@ import React from 'react'
 import { Grid, Header, List, Image, Icon } from 'semantic-ui-react'
 import LogoCUP from '../images/logoCUP.jpg'
 
+const trobades = [
+  {
+    id: '01',
+    subject: 'Ciutat Feminista',
+    time: "20 d'octubre a les 18 h",
+    place: 'Ateneu',
+  },
+  {
+    id: '02',
+    subject: 'Urbanisme',
+    time: '10 de novembre a les 18 h',
+    place: 'Centre Cívic de Sant Joan',
+  },
+  {
+    id: '03',
+    subject: 'Cultura',
+    time: '24 de novembre a les 18 h',
+    place: 'Centre Cívic La Sardana',
+  },
+  {
+    id: '04',
+    subject: 'Aprofundiment democràtic',
+    time: '1 de desembre a les 18 h',
+    place: 'Centre Cívic Baix-a-Mar',
+  },
+  {
+    id: '05',
+    subject: 'Drets Socials',
+    time: '15 de desembre a les 18 h',
+    place: 'Centre Cívic del Tacó',
+  },
+  {
+    id: '06',
+    subject: 'Model Econòmic',
+    time: '22 de desembre a les 18 h',
+    place: 'Centre Cívic La Geltrú',
+  },
+]
+
+const Trobada = props => (
+  <List.Item>
+    <List.Icon
+      name="calendar alternate outline"
+      size="big"
+      verticalAlign="middle"
+    />
+    <List.Content inverted>
+      <List.Header color="#fff">{props.subject}</List.Header>
+      <List.Description style={{ whiteSpace: 'pre-wrap' }}>
+        {props.time}
+        {'\n'}
+        {props.place}
+      </List.Description>
+    </List.Content>
+  </List.Item>
+)
+
 const Footer = () => (
   <div
     style={{ backgroundColor: '#000000', color: '#fff', paddingBottom: '24px' }}
@@ -24,50 +81,14 @@ const Footer = () => (
           Trobades obertes
         </Header>
         <List divided relaxed="very" verticalAlign="middle" inverted>
-          <List.Item>
-            <List.Icon
-              name="calendar alternate outline"
-              size="big"
-              verticalAlign="middle"
+          {trobades.map(i => (
+            <Trobada
+              time={i.time}
+              place={i.place}
+              subject={i.subject}
+              key={i.id}
             />
-            <List.Content inverted>
-              <List.Header color="#fff">Dia - 19.00 h</List.Header>
-              <List.Description>Lloc de la trobada</List.Description>
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Icon
-              name="calendar alternate outline"
-              size="big"
-              verticalAlign="middle"
-            />
-            <List.Content>
-              <List.Header>Dia - 19.00 h</List.Header>
-              <List.Description>Lloc de la trobada</List.Description>
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Icon
-              name="calendar alternate outline"
-              size="big"
-              verticalAlign="middle"
-            />
-            <List.Content>
-              <List.Header>Dia - 19.00 h</List.Header>
-              <List.Description>Lloc de la trobada</List.Description>
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Icon
-              name="calendar alternate outline"
-              size="big"
-              verticalAlign="middle"
-            />
-            <List.Content>
-              <List.Header>Dia - 19.00 h</List.Header>
-              <List.Description>Lloc de la trobada</List.Description>
-            </List.Content>
-          </List.Item>
+          ))}
         </List>
       </Grid.Column>
       <Grid.Column>
