@@ -32,7 +32,7 @@ exports.handler = function(event, context, callback) {
     subject: `Moltes gràcies ${name} per la proposta`,
     html: `<div><p>Moltes gràcies ${name} per la teva participació!</p><p>Hem rebut la teva proposta a través del web www.estemapuntvng.cat. La tindrem en compte a l'hora d'elaborar el programa.</p><p style="font-weight:bold">Proposta:</p><p style="font-style:italic">${message}</p><p>Informació de privacitat:<p><ul>${subscribeCampaignInfo}${subscribeGeneralInfo}</ul></div>`,
     to: `"${name}" ${email}`,
-    bbc: 'oriol.castroarnau@gmail.com',
+    bcc: 'cupdevilanova@gmail.com',
   }
 
   var transporter = nodemailer.createTransport(mg(auth))
