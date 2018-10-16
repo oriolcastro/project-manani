@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, Header, List, Image, Icon } from 'semantic-ui-react'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import LogoCUP from '../images/logoCUP.jpg'
 
 const trobades = [
@@ -100,18 +101,18 @@ const Footer = () => (
         />
         <p style={{ whiteSpace: 'pre-wrap' }}>
           Ateneu Vilanoví (Plaça Llarga, 19 baixos) {'\n'}
-          <a
+          <OutboundLink
             href="http://www.cupvilanova.cat"
             title="Pàgina web de la CUP"
             rel="nofollow noopener noreferrer"
             target="_blank"
           >
             www.cupvilanova.cat
-          </a>
+          </OutboundLink>
           {'\n'}
           <a href="mailto:vilanova@cup.cat">vilanova@cup.cat</a>
         </p>
-        <a
+        <OutboundLink
           href="https://www.facebook.com/cupdevilanova"
           rel="nofollow noopener noreferrer"
           target="_blank"
@@ -124,8 +125,8 @@ const Footer = () => (
             inverted
             style={{ marginBottom: '0.5rem' }}
           />
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href="https://twitter.com/cupdevilanova"
           rel="nofollow noopener noreferrer"
           target="_blank"
@@ -133,8 +134,8 @@ const Footer = () => (
           style={{ marginBottom: '0.5rem' }}
         >
           <Icon name="twitter" size="large" circular inverted />
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href="https://www.instagram.com/cupdevilanova/"
           rel="nofollow noopener noreferrer"
           target="_blank"
@@ -142,8 +143,8 @@ const Footer = () => (
           style={{ marginBottom: '0.5rem' }}
         >
           <Icon name="instagram" size="large" circular inverted />
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href="http://t.me/cupdevilanova"
           rel="nofollow noopener noreferrer"
           target="_blank"
@@ -151,8 +152,8 @@ const Footer = () => (
           style={{ marginBottom: '0.5rem' }}
         >
           <Icon name="telegram plane" size="large" circular inverted />
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href="https://www.youtube.com/user/cupdevilanova"
           rel="nofollow noopener noreferrer"
           target="_blank"
@@ -160,7 +161,7 @@ const Footer = () => (
           style={{ marginBottom: '0.5rem' }}
         >
           <Icon name="youtube" size="large" circular inverted />
-        </a>
+        </OutboundLink>
       </Grid.Column>
     </Grid>
   </div>

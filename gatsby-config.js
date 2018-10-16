@@ -11,6 +11,14 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-netlify',
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.MY_GOOGLE_ANALYTICS_ID,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
