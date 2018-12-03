@@ -101,7 +101,7 @@ class EsmenesForm extends Component {
             <Form.Group widths="equal">
               <Form.Input
                 label="Número de pàgina"
-                name="pageName"
+                name="pageNumber"
                 type="number"
                 value={this.state.pageNumber}
                 onChange={this.handleChange}
