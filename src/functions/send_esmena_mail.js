@@ -36,7 +36,7 @@ exports.handler = function(event, context, callback) {
     to: `"${name}" ${email}`,
     bcc: 'cupdevilanova@gmail.com, oriol.castroarnau@gmail.com',
     subject: `Moltes gràcies ${name} per l'esmena al document`,
-    html: `<div><p>Moltes gràcies ${name} per la teva participació!</p><p>Hem rebut la teva esmena al document de Proposta Estratègica a través del web www.estemapuntvng.cat.</p><p>Aquesta esmena afecta a la línia ${lineNum} de la pàgina ${pageNum} del document.</p></p><p style="font-weight:bold">Text original:</p><p style="font-style:italic">${originalText}</p><p style="font-weight:bold">Proposta de nou redactat:</p><p style="font-style:italic">${newText}</p><p>Informació de privacitat:<p><ul>${subscribeCampaignInfo}${subscribeGeneralInfo}</ul></div>`,
+    html: `<div><p>Moltes gràcies ${name} per la teva participació!</p><p>Hem rebut la teva esmena al document de Proposta Estratègica a través del web www.estemapuntvng.cat.</p><p>Aquesta esmena afecta a la línia ${lineNum} de la pàgina ${pageNum}.</p></p><p style="font-weight:bold">Text original:</p><p style="font-style:italic">${originalText}</p><p style="font-weight:bold">Proposta de nou redactat:</p><p style="font-style:italic">${newText}</p><p>Informació de privacitat:<p><ul>${subscribeCampaignInfo}${subscribeGeneralInfo}</ul></div>`,
   }
 
   var transporter = nodemailer.createTransport(mg(auth))
