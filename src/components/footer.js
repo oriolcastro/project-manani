@@ -6,12 +6,18 @@ import LogoCUP from '../images/logoCUP.jpg'
 const trobades = [
   {
     id: '01',
+    subject: 'Drets Socials',
+    time: '14 de desembre a les 18 h',
+    place: 'Centre Cívic del Tacó',
+  },
+  {
+    id: '02',
     subject: 'Proposta Estratègica 2019',
     time: '15 de desembre a les 18 h',
     place: 'Gran Penya',
   },
   {
-    id: '02',
+    id: '03',
     subject: 'Model Econòmic',
     time: '22 de desembre a les 18 h',
     place: 'Centre Cívic La Geltrú',
