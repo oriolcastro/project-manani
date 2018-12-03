@@ -25,6 +25,7 @@
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-pdf": "^4.0.0",
+    "react-sizeme": "^2.5.2",
     "react-slick": "^0.23.1",
     "semantic-ui-css": "^2.4.0",
     "semantic-ui-react": "^0.82.5",
