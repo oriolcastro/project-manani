@@ -45,8 +45,15 @@ const Hero = () => (
         <Grid.Row>
           <Grid.Column textAlign="center">
             <AnchorLink href="#formulari" offset="270">
+              <Button inverted size="large">
+                <Button.Content>
+                  Propostes pel Programa Electoral
+                </Button.Content>
+              </Button>
+            </AnchorLink>
+            <AnchorLink href="#propEstrategica" offset="350">
               <Button color="black" size="large">
-                <Button.Content>Digues la teva</Button.Content>
+                <Button.Content>Esmena la Proposta Estratègica</Button.Content>
               </Button>
             </AnchorLink>
           </Grid.Column>

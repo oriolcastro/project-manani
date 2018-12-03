@@ -4,12 +4,17 @@ import doc from '../images/document_base.pdf'
 import DocVisualizer from './docvisualizer'
 
 const PropostaEstrategica = props => (
-  <Container text style={{ marginBottom: '48px' }} textAlign="justified">
+  <Container
+    text
+    style={{ marginBottom: '48px' }}
+    textAlign="justified"
+    id="propEstrategica"
+  >
     <Header as="h2" marginBottom="28">
       Proposta Estratègica
     </Header>
     <DocVisualizer doc={doc} />
-    <Button color="yellow" href={doc} download>
+    <Button icon labelPosition="right" color="yellow" href={doc} download>
       <Icon name="file pdf" />
       Descarregat el document
     </Button>

@@ -10,8 +10,8 @@ class EsmenesForm extends Component {
     this.state = {
       name: '',
       email: '',
-      pageNumber: null,
-      lineNumber: null,
+      pageNumber: {},
+      lineNumber: {},
       originalText: '',
       newText: '',
       subscribeCampaignInfo: false,
@@ -44,8 +44,8 @@ class EsmenesForm extends Component {
     this.setState({
       name: '',
       email: '',
-      pageNumber: null,
-      lineNumber: null,
+      pageNumber: {},
+      lineNumber: {},
       originalText: '',
       newText: '',
       subscribeCampaignInfo: false,

@@ -58,7 +58,7 @@ class IdeasForm extends Component {
     return (
       <div id="formulari" style={{ marginBottom: '40px' }}>
         <Container text>
-          <Header as="h2">Digues la teva</Header>
+          <Header as="h2">Fes una proposta pel Programa Electoral</Header>
           <Form
             success={this.state.formSuccess}
             onSubmit={this.handleSubmit}
