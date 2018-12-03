@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withSize } from 'react-sizeme'
-import { Document, Page } from 'react-pdf'
+import { Document, Page } from 'react-pdf/dist/entry.webpack'
 import { Grid, Icon } from 'semantic-ui-react'
 
 class DocVisualizer extends Component {
