@@ -119,7 +119,7 @@ class EsmenesForm extends Component {
               />
             </Form.Group>
             <Form.TextArea
-              label="Text original"
+              label="Text original a esmenar"
               name="originalText"
               placeholder="El text del document que vols esmenear"
               value={this.state.originalText}
@@ -128,7 +128,7 @@ class EsmenesForm extends Component {
               autoHeight
             />
             <Form.TextArea
-              label="Proposta de text"
+              label="Proposta de nou text"
               name="newText"
               placeholder="La teva proposta de nou text"
               value={this.state.newText}
