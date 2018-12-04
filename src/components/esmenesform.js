@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import { Container, Form, Message, Header } from 'semantic-ui-react'
+import { Container, Form, Message } from 'semantic-ui-react'
 import axios from 'axios'
 
 import styles from './ideasform.module.scss'
 
-class IdeasForm extends Component {
+class EsmenesForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
       name: '',
       email: '',
-      message: '',
+      pageNumber: {},
+      lineNumber: {},
+      originalText: '',
+      newText: '',
       subscribeCampaignInfo: false,
       subscribeGeneralInfo: false,
       formSuccess: false,
@@ -18,15 +21,17 @@ class IdeasForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
-
   handleSubmit(event) {
     const data = this.state
     console.log(data)
     axios
-      .post('.netlify/functions/send_mail', {
+      .post('.netlify/functions/send_esmena_mail', {
         name: data.name,
         email: data.email,
-        message: data.message,
+        pageNumber: data.pageNumber,
+        lineNumber: data.lineNumber,
+        originalText: data.originalText,
+        newText: data.newText,
         subscribeCampaignInfo: data.subscribeCampaignInfo,
         subscribeGeneralInfo: data.subscribeGeneralInfo,
       })
@@ -39,7 +44,10 @@ class IdeasForm extends Component {
     this.setState({
       name: '',
       email: '',
-      message: '',
+      pageNumber: {},
+      lineNumber: {},
+      originalText: '',
+      newText: '',
       subscribeCampaignInfo: false,
       subscribeGeneralInfo: false,
       formSuccess: true,
@@ -58,7 +66,6 @@ class IdeasForm extends Component {
     return (
       <div id="formulari" style={{ marginBottom: '40px' }}>
         <Container text>
-          <Header as="h2">Fes una proposta pel Programa Electoral</Header>
           <Form
             success={this.state.formSuccess}
             onSubmit={this.handleSubmit}
@@ -67,7 +74,7 @@ class IdeasForm extends Component {
             <Message
               success
               header="Proposta enviada"
-              content="Gracies per la teva participació. Rebràs un correu electronic confirmant que hem rebut la proposta"
+              content="Gracies per la teva participació. Rebràs un correu electronic confirmant que hem rebut l'esmena"
             />
             <Form.Group widths="equal">
               <Form.Input
@@ -91,11 +98,40 @@ class IdeasForm extends Component {
                 fluid
               />
             </Form.Group>
+            <Form.Group widths="equal">
+              <Form.Input
+                label="Número de pàgina"
+                name="pageNumber"
+                type="number"
+                value={this.state.pageNumber}
+                onChange={this.handleChange}
+                required
+                fluid
+              />
+              <Form.Input
+                label="Número de línia"
+                name="lineNumber"
+                type="number"
+                value={this.state.lineNumber}
+                onChange={this.handleChange}
+                required
+                fluid
+              />
+            </Form.Group>
             <Form.TextArea
-              label="Fes la teva proposta"
-              name="message"
-              placeholder="Jo crec que Vilanova necessita..."
-              value={this.state.message}
+              label="Text original a esmenar"
+              name="originalText"
+              placeholder="El text del document que vols esmenear"
+              value={this.state.originalText}
+              onChange={this.handleChange}
+              required
+              autoHeight
+            />
+            <Form.TextArea
+              label="Proposta de nou text"
+              name="newText"
+              placeholder="La teva proposta de nou text"
+              value={this.state.newText}
               onChange={this.handleChange}
               required
               autoHeight
@@ -145,4 +181,4 @@ class IdeasForm extends Component {
   }
 }
 
-export default IdeasForm
+export default EsmenesForm

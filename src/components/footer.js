@@ -6,36 +6,18 @@ import LogoCUP from '../images/logoCUP.jpg'
 const trobades = [
   {
     id: '01',
-    subject: 'Ciutat Feminista',
-    time: "20 d'octubre a les 18 h",
-    place: 'Ateneu',
-  },
-  {
-    id: '02',
-    subject: 'Urbanisme',
-    time: '10 de novembre a les 18 h',
-    place: 'Centre Cívic de Sant Joan',
-  },
-  {
-    id: '03',
-    subject: 'Cultura',
-    time: '24 de novembre a les 18 h',
-    place: 'Centre Cívic La Sardana',
-  },
-  {
-    id: '04',
-    subject: 'Aprofundiment democràtic',
-    time: '1 de desembre a les 18 h',
-    place: 'Centre Cívic Baix-a-Mar',
-  },
-  {
-    id: '05',
     subject: 'Drets Socials',
-    time: '15 de desembre a les 18 h',
+    time: '14 de desembre a les 18 h',
     place: 'Centre Cívic del Tacó',
   },
   {
-    id: '06',
+    id: '02',
+    subject: 'Proposta Estratègica 2019',
+    time: '15 de desembre a les 18 h',
+    place: 'Gran Penya',
+  },
+  {
+    id: '03',
     subject: 'Model Econòmic',
     time: '22 de desembre a les 18 h',
     place: 'Centre Cívic La Geltrú',
