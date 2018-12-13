@@ -20,9 +20,9 @@ const IndexPage = ({ data }) => (
       style={{ marginBottom: '40px' }}
     />
     <PropostaEstrategica />
-    <Segment color="yellow" inverted>
+    <Segment color="yellow" inverted padded raised style={{ margin: '48px' }}>
       <Header size="large">
-        EL termini per enviar esmenes ha finalitzat. Ens veiem dissabte a
+        El termini per enviar esmenes ha finalitzat. Ens veiem dissabte a
         l'Assemblea!
       </Header>
     </Segment>
