@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { Segment, Header } from 'semantic-ui-react'
 
 import Layout from '../components/layout'
 import IdeasForm from '../components/ideasform'
@@ -19,7 +20,12 @@ const IndexPage = ({ data }) => (
       style={{ marginBottom: '40px' }}
     />
     <PropostaEstrategica />
-    <EsmenesForm />
+    <Segment color="yellow" inverted>
+      <Header size="large">
+        EL termini per enviar esmenes ha finalitzat. Ens veiem dissabte a
+        l'Assemblea!
+      </Header>
+    </Segment>
   </Layout>
 )
 
