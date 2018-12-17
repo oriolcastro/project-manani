@@ -22,8 +22,7 @@ const IndexPage = ({ data }) => (
     <PropostaEstrategica />
     <Segment color="yellow" inverted padded raised style={{ margin: '48px' }}>
       <Header size="large">
-        El termini per enviar esmenes ha finalitzat. Ens veiem dissabte a
-        l'Assemblea!
+        Pròximament publicarem el document aprovat dissabte en Assemblea.
       </Header>
     </Segment>
   </Layout>
