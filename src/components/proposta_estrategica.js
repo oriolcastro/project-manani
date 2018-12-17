@@ -13,6 +13,8 @@ const PropostaEstrategica = props => (
     <Header as="h2" marginBottom="28">
       Proposta Estratègica
     </Header>
+    {/* Ocultat a l'espera de publicar el document aprovat en Assemblea
+    
     <DocVisualizer doc={doc} />
     <Button icon labelPosition="right" color="yellow" href={doc} download>
       <Icon name="file pdf" />
@@ -24,7 +26,7 @@ const PropostaEstrategica = props => (
       pàgina i número de línia a esmenar. A continuació hauràs d'escriure el
       text que vols modificar, eliminar o afegir, i finalment caldrà que
       especifiquis el nou text que proposes.
-    </p>
+    </p> */}
   </Container>
 )
 
