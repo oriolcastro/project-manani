@@ -21,10 +21,11 @@ exports.handler = function(event, context, callback) {
   const email = params.email
   const nameCandidateTercer = params.nameCandidateTercer
   const emailCandidateTercer = params.emailCandidateTercer
+  const equipAcompanyament = params.equipAcompanyament
   const candidateType =
     params.candidateType === 'Autocandidatura'
       ? 'La comissió de llistes es posarà en contacte amb tu un cop rebudes totes les propostes.'
-      : `La comissió de llistes es posarà en contacte amb la persona que has proposat un cop rebudes totes les propostes per coneixer la seva voluntat de formar part de la llista electoral.<p>Informació de la candidata:</p><ul><li>Nom: ${nameCandidateTercer}</li><li>Correu electrònic: ${emailCandidateTercer}</li></ul>`
+      : `La comissió de llistes es posarà en contacte amb la persona que has proposat un cop rebudes totes les propostes per conèixer la seva voluntat de formar part de la llista electoral.<p>Informació de la candidata:</p><ul><li>Nom: ${nameCandidateTercer}</li><li>Correu electrònic: ${emailCandidateTercer}</li></ul>`
   const subscribeCampaignInfo = params.subscribeCampaignInfo
     ? '<li>Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya electoral.</li>'
     : ''
@@ -38,7 +39,16 @@ exports.handler = function(event, context, callback) {
     to: `"${name}" ${email}`,
     bcc: 'cupdevilanova@gmail.com, oriol.castroarnau@gmail.com',
     subject: `Moltes gràcies ${name} per la proposta per a la llista electoral`,
-    html: `<div><p>Moltes gràcies ${name} per la teva participació!</p><p>Hem rebut la teva proposta per a la llista electoral a través del web www.estemapuntvng.cat.</p><p>${candidateType}</p><p>Ens veiem a l'Assemblea dissabte 26 de gener.</p><p>Informació de privacitat:</p><ul>${subscribeCampaignInfo}${subscribeGeneralInfo}</ul></div>`,
+    html: `<div>
+    <p>Moltes gràcies ${name} per la teva participació!</p>
+    <p>Hem rebut la teva proposta per a la llista electoral a través del web www.estemapuntvng.cat.</p>
+    <p>${candidateType}</p>
+    <p>Les teves propostes per a l'equip d'acompanyament són: </p>
+    <p>${equipAcompanyament}</p>
+    <p>Ens veiem a l'Assemblea dissabte 26 de gener.</p>
+    <p>Informació de privacitat:</p>
+    <ul>${subscribeCampaignInfo}${subscribeGeneralInfo}</ul>
+    </div>`,
   }
 
   var transporter = nodemailer.createTransport(mg(auth))

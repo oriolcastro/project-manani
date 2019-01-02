@@ -13,6 +13,7 @@ class CandidatsForm extends Component {
       candidateType: '',
       nameCandidateTercer: '',
       emailCandidateTercer: '',
+      equipAcompanyament: '',
       subscribeCampaignInfo: false,
       subscribeGeneralInfo: false,
       formSuccess: false,
@@ -30,6 +31,7 @@ class CandidatsForm extends Component {
         candidateType: data.candidateType,
         nameCandidateTercer: data.nameCandidateTercer,
         emailCandidateTercer: data.emailCandidateTercer,
+        equipAcompanyament: data.equipAcompanyament,
         subscribeCampaignInfo: data.subscribeCampaignInfo,
         subscribeGeneralInfo: data.subscribeGeneralInfo,
       })
@@ -45,6 +47,7 @@ class CandidatsForm extends Component {
       candidateType: '',
       nameCandidateTercer: '',
       emailCandidateTercer: '',
+      equipAcompanyament: '',
       subscribeCampaignInfo: false,
       subscribeGeneralInfo: false,
       formSuccess: true,
@@ -137,6 +140,17 @@ class CandidatsForm extends Component {
                 />
               </Form.Group>
             )}
+            <Form.Group widths="equal">
+              <Form.TextArea
+                label="Persones per a l'espai polític d'acompanyament"
+                name="equipAcompanyament"
+                placeholder="Afegeix les teves propostes de persones que podrien formar part de l'equip d'acompanyament indicant el seu NOM, COGNOMS i CORREU ELECTRÒNIC."
+                value={this.state.equipAcompanyament}
+                onChange={this.handleChange}
+                required
+                autoHeight
+              />
+            </Form.Group>
             <Form.Field
               label="Vull rebre informació sobre l'elaboració del programa electoral i la campanya de la CUP per a les eleccions municipals 2019 al meu correu electrònic"
               type="checkbox"
