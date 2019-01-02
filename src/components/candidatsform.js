@@ -120,7 +120,7 @@ class CandidatsForm extends Component {
                   name="nameCandidateTercer"
                   placeholder="nom i cognoms de la persona que proposes"
                   type="text"
-                  value={this.state.name}
+                  value={this.state.nameCandidateTercer}
                   onChange={this.handleChange}
                   required
                   fluid
@@ -130,7 +130,7 @@ class CandidatsForm extends Component {
                   name="emailCandidateTercer"
                   placeholder="correu electrònic de la persona que proposes"
                   type="email"
-                  value={this.state.email}
+                  value={this.state.emailCandidateTercer}
                   onChange={this.handleChange}
                   required
                   fluid
