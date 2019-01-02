@@ -5,7 +5,7 @@
   "author": "Oriol Castro <hola@okstudio.tech>",
   "dependencies": {
     "axios": "^0.18.0",
-    "dotenv": "latest",
+    "dotenv": "^6.2.0",
     "gatsby": "^2.0.21",
     "gatsby-image": "^2.0.22",
     "gatsby-plugin-google-analytics": "^2.0.6",
@@ -28,7 +28,7 @@
     "react-sizeme": "^2.5.2",
     "react-slick": "^0.23.1",
     "semantic-ui-css": "^2.4.0",
-    "semantic-ui-react": "^0.82.5",
+    "semantic-ui-react": "^0.84.0",
     "slick-carousel": "^1.8.1"
   },
   "keywords": [
