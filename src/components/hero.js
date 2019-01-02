@@ -44,14 +44,12 @@ const Hero = () => (
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign="center">
-            <AnchorLink href="#formulari" offset="270">
+            <AnchorLink href="#propCandidats" offset="20">
               <Button inverted size="large" style={{ marginBottom: '28px' }}>
-                <Button.Content>
-                  Propostes pel Programa Electoral
-                </Button.Content>
+                <Button.Content>Construïm la llista electoral</Button.Content>
               </Button>
             </AnchorLink>
-            <AnchorLink href="#propEstrategica" offset="350">
+            {/* <AnchorLink href="#propEstrategica" offset="350">
               <Button
                 color="black"
                 size="large"
@@ -59,7 +57,7 @@ const Hero = () => (
               >
                 <Button.Content>Esmena la Proposta Estratègica</Button.Content>
               </Button>
-            </AnchorLink>
+            </AnchorLink> */}
           </Grid.Column>
         </Grid.Row>
       </Grid>

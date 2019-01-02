@@ -1,30 +1,22 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import { Segment, Header } from 'semantic-ui-react'
 
 import Layout from '../components/layout'
-import IdeasForm from '../components/ideasform'
 import Hero from '../components/hero'
-import IdeasExample from '../components/ideasexamples'
 import PropostaEstrategica from '../components/proposta_estrategica'
-import EsmenesForm from '../components/esmenesform'
+import PropostaCandidats from '../components/proposta_candidats'
+import CandidatsForm from '../components/candidatsform'
 
 const IndexPage = ({ data }) => (
   <Layout>
     <Hero />
-    <IdeasExample />
-    <IdeasForm />
-    <Img
+    {/* <Img
       fluid={data.file.childImageSharp.fluid}
       style={{ marginBottom: '40px' }}
-    />
+    /> */}
     <PropostaEstrategica />
-    <Segment color="yellow" inverted padded raised style={{ margin: '48px' }}>
-      <Header size="large">
-        Pròximament publicarem el document aprovat dissabte en Assemblea.
-      </Header>
-    </Segment>
+    <PropostaCandidats />
+    <CandidatsForm />
   </Layout>
 )
 
