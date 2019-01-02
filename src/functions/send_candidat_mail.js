@@ -19,12 +19,12 @@ exports.handler = function(event, context, callback) {
   const params = JSON.parse(event.body)
   const name = params.name
   const email = params.email
-  const nameCandiateTercer = params.nameCandiateTercer
+  const nameCandidateTercer = params.nameCandidateTercer
   const emailCandidateTercer = params.emailCandidateTercer
   const candidateType =
     params.candidateType === 'Autocandidatura'
       ? 'La comissió de llistes es posarà en contacte amb tu un cop rebudes totes les propostes.'
-      : `La comissió de llistes es posarà en contacte amb la persona que has proposat un cop rebudes totes les propostes per coneixer la seva voluntat de formar part de la llista electoral.<p>Informació de la candidata:</p><ul><li>Nom: ${nameCandiateTercer}</li><li>Correu electrònic: ${emailCandidateTercer}</li></ul>`
+      : `La comissió de llistes es posarà en contacte amb la persona que has proposat un cop rebudes totes les propostes per coneixer la seva voluntat de formar part de la llista electoral.<p>Informació de la candidata:</p><ul><li>Nom: ${nameCandidateTercer}</li><li>Correu electrònic: ${emailCandidateTercer}</li></ul>`
   const subscribeCampaignInfo = params.subscribeCampaignInfo
     ? '<li>Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya electoral.</li>'
     : ''
