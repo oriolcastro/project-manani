@@ -33,31 +33,27 @@ const Hero = () => (
               aprofiti tot el potencial de transformació que la ciutadania
               demostra dia rere dia des de mil fronts diferents.
               {'\n'}
-              {'\n'}
-              Aquest és un espai per rebre propostes i confeccionar
-              horitzontalment el millor programa polític possible i aixecar una
-              ciutat integradora, feminista, socialment justa, urbanísticament
-              responsable i on la ciutadania sempre tingui l’última paraula.
-              {'\n'}
             </Header>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign="center">
-            <AnchorLink href="#propCandidats" offset="20">
+            <AnchorLink href="#propCandidats" offset="180">
               <Button inverted size="large" style={{ marginBottom: '28px' }}>
                 <Button.Content>Construïm la llista electoral</Button.Content>
               </Button>
             </AnchorLink>
-            {/* <AnchorLink href="#propEstrategica" offset="350">
+            <AnchorLink href="#propMarca" offset="180">
               <Button
                 color="black"
                 size="large"
                 style={{ marginBottom: '28px' }}
               >
-                <Button.Content>Esmena la Proposta Estratègica</Button.Content>
+                <Button.Content>
+                  Propostes pel nom de la candidatura
+                </Button.Content>
               </Button>
-            </AnchorLink> */}
+            </AnchorLink>
           </Grid.Column>
         </Grid.Row>
       </Grid>

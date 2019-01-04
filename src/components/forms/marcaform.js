@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
-import { Container, Form, Message } from 'semantic-ui-react'
+import { Container, Form, Message, Header, Divider } from 'semantic-ui-react'
 import axios from 'axios'
 
 import styles from './ideasform.module.scss'
 
-class CandidatsForm extends Component {
+class MarcaForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
       name: '',
       email: '',
-      candidateType: '',
-      nameCandidateTercer: '',
-      emailCandidateTercer: '',
-      equipAcompanyament: '',
+      marca: '',
       subscribeCampaignInfo: false,
       subscribeGeneralInfo: false,
       formSuccess: false,
@@ -25,13 +22,10 @@ class CandidatsForm extends Component {
     const data = this.state
     console.log(data)
     axios
-      .post('.netlify/functions/send_candidat_mail', {
+      .post('.netlify/functions/send_marca_mail', {
         name: data.name,
         email: data.email,
-        candidateType: data.candidateType,
-        nameCandidateTercer: data.nameCandidateTercer,
-        emailCandidateTercer: data.emailCandidateTercer,
-        equipAcompanyament: data.equipAcompanyament,
+        marca: data.marca,
         subscribeCampaignInfo: data.subscribeCampaignInfo,
         subscribeGeneralInfo: data.subscribeGeneralInfo,
       })
@@ -44,10 +38,7 @@ class CandidatsForm extends Component {
     this.setState({
       name: '',
       email: '',
-      candidateType: '',
-      nameCandidateTercer: '',
-      emailCandidateTercer: '',
-      equipAcompanyament: '',
+      marca: '',
       subscribeCampaignInfo: false,
       subscribeGeneralInfo: false,
       formSuccess: true,
@@ -64,14 +55,6 @@ class CandidatsForm extends Component {
   }
 
   render() {
-    const options = [
-      { key: 'auto', text: 'Autocandidatura', value: 'Autocandidatura' },
-      {
-        key: 'tercer',
-        text: 'Tercera persona',
-        value: 'Tercera persona',
-      },
-    ]
     return (
       <div id="formulari" style={{ marginBottom: '40px' }}>
         <Container text>
@@ -83,8 +66,9 @@ class CandidatsForm extends Component {
             <Message
               success
               header="Proposta enviada"
-              content="Gracies per la teva participació. Rebràs un correu electronic confirmant que hem rebut la proposta de candidatura per a la llista electoral."
+              content="Gracies per la teva participació. Rebràs un correu electronic confirmant que hem rebut la proposta de nom per a la candidatura."
             />
+
             <Form.Group widths="equal">
               <Form.Input
                 label="Nom"
@@ -107,50 +91,17 @@ class CandidatsForm extends Component {
                 fluid
               />
             </Form.Group>
-            <Form.Group widths="equal">
-              <Form.Select
-                label="Tipus de candidatura"
-                placeholder="Tipus de candidatura"
-                options={options}
-                onChange={this.handleChange}
-                name="candidateType"
-              />
-            </Form.Group>
-            {this.state.candidateType === 'Tercera persona' && (
-              <Form.Group widths="equal">
-                <Form.Input
-                  label="Nom i cognoms candidata"
-                  name="nameCandidateTercer"
-                  placeholder="nom i cognoms de la persona que proposes"
-                  type="text"
-                  value={this.state.nameCandidateTercer}
-                  onChange={this.handleChange}
-                  required
-                  fluid
-                />
-                <Form.Input
-                  label="Correu electrònic candidata"
-                  name="emailCandidateTercer"
-                  placeholder="correu electrònic de la persona que proposes"
-                  type="email"
-                  value={this.state.emailCandidateTercer}
-                  onChange={this.handleChange}
-                  required
-                  fluid
-                />
-              </Form.Group>
-            )}
-            <Form.Group widths="equal">
-              <Form.TextArea
-                label="Persones per a l'espai polític d'acompanyament"
-                name="equipAcompanyament"
-                placeholder="Afegeix les teves propostes de persones que podrien formar part de l'equip d'acompanyament indicant el seu NOM, COGNOMS i CORREU ELECTRÒNIC."
-                value={this.state.equipAcompanyament}
-                onChange={this.handleChange}
-                required
-                autoHeight
-              />
-            </Form.Group>
+            <Form.TextArea
+              label="Propostes de nom per a la candidatura"
+              name="marca"
+              placeholder="Les teves propostes"
+              type="text"
+              value={this.state.marca}
+              onChange={this.handleChange}
+              required
+              autoHeight
+            />
+
             <Form.Field
               label="Vull rebre informació sobre l'elaboració del programa electoral i la campanya de la CUP per a les eleccions municipals 2019 al meu correu electrònic"
               type="checkbox"
@@ -196,4 +147,4 @@ class CandidatsForm extends Component {
   }
 }
 
-export default CandidatsForm
+export default MarcaForm

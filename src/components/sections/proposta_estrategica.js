@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Header, Button, Icon } from 'semantic-ui-react'
-import doc from '../images/document_final.pdf'
-import DocVisualizer from './docvisualizer'
+import doc from '../../images/document_final.pdf'
+import DocVisualizer from '../docvisualizer'
 
 const PropostaEstrategica = props => (
   <Container
@@ -10,7 +10,7 @@ const PropostaEstrategica = props => (
     textAlign="justified"
     id="propEstrategica"
   >
-    <Header as="h2" marginBottom="28">
+    <Header as="h1" marginBottom="28">
       Proposta Estratègica
     </Header>
     <p>

@@ -19,10 +19,7 @@ exports.handler = function(event, context, callback) {
   const params = JSON.parse(event.body)
   const name = params.name
   const email = params.email
-  const nameCandidate = params.nameCandidate
-  const emailCandidate = params.emailCandidate
-  const equipAcompanyament = params.equipAcompanyament
-  const candidate = `La comissió de llistes es posarà en contacte amb la persona que has proposat un cop rebudes totes les propostes per conèixer la seva voluntat de formar part de la llista electoral.<p>Informació de la candidata:</p><ul><li>Nom: ${nameCandidate}</li><li>Correu electrònic: ${emailCandidate}</li></ul>`
+  const marca = params.marca
   const subscribeCampaignInfo = params.subscribeCampaignInfo
     ? '<li>Afegirem la teva adreça de correu a la nostra llista de distribució per enviar-te informació del programa i la campanya electoral.</li>'
     : ''
@@ -35,13 +32,12 @@ exports.handler = function(event, context, callback) {
     replyTo: 'cupdevilanova@gmail.com',
     to: `"${name}" ${email}`,
     bcc: 'cupdevilanova@gmail.com, oriol.castroarnau@gmail.com',
-    subject: `Moltes gràcies ${name} per la teva proposta per a la llista electoral`,
+    subject: `Proposta de nom rebuda correctament`,
     html: `<div>
     <p>Moltes gràcies ${name} per la teva participació!</p>
-    <p>Hem rebut la teva proposta per a la llista electoral a través del web www.estemapuntvng.cat.</p>
-    <p>${candidate}</p>
-    <p>Les teves propostes per a l'equip d'acompanyament són: </p>
-    <p>${equipAcompanyament}</p>
+    <p>Hem rebut les teves propostes a través del web www.estemapuntvng.cat.</p>
+    <p>Les teves propostes per al nom de la candidatura són: </p>
+    <p>${marca}</p>
     <p>Ens veiem a l'Assemblea dissabte 26 de gener.</p>
     <p>Informació de privacitat:</p>
     <ul>${subscribeCampaignInfo}${subscribeGeneralInfo}</ul>

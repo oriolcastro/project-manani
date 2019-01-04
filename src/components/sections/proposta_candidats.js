@@ -8,7 +8,7 @@ const PropostaCandidats = props => (
     textAlign="justified"
     id="propCandidats"
   >
-    <Header as="h2" marginBottom="28">
+    <Header as="h1" marginBottom="28">
       Proposa persones per a la llista electoral
     </Header>
     <p>Construim la llista plegades bla bla bla</p>
