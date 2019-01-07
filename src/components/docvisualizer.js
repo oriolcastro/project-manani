@@ -10,6 +10,7 @@ class DocVisualizer extends Component {
       pageNum: 0,
       lastPage: false,
       firstPage: true,
+      numOfPages: 8,
     }
     this.prevPage = this.prevPage.bind(this)
     this.nextPage = this.nextPage.bind(this)
@@ -23,9 +24,12 @@ class DocVisualizer extends Component {
         pageNum: prevState.pageNum - 1,
         firstPage: true,
       }))
-    } else if (this.state.pageNum > 1 && this.state.pageNum < 6) {
+    } else if (
+      this.state.pageNum > 1 &&
+      this.state.pageNum < this.state.numOfPages - 1
+    ) {
       this.setState(prevState => ({ pageNum: prevState.pageNum - 1 }))
-    } else if (this.state.pageNum === 6) {
+    } else if (this.state.pageNum === this.state.numOfPages - 1) {
       this.setState(prevState => ({
         pageNum: prevState.pageNum - 1,
         lastPage: false,
@@ -39,9 +43,12 @@ class DocVisualizer extends Component {
         pageNum: prevState.pageNum + 1,
         firstPage: false,
       }))
-    } else if (this.state.pageNum > 0 && this.state.pageNum < 5) {
+    } else if (
+      this.state.pageNum > 0 &&
+      this.state.pageNum < this.state.numOfPages - 2
+    ) {
       this.setState(prevState => ({ pageNum: prevState.pageNum + 1 }))
-    } else if (this.state.pageNum === 5) {
+    } else if (this.state.pageNum === this.state.numOfPages - 2) {
       this.setState(prevState => ({
         pageNum: prevState.pageNum + 1,
         lastPage: true,
