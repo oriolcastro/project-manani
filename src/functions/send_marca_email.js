@@ -31,7 +31,7 @@ exports.handler = function(event, context, callback) {
     from: '"CUP Vilanova i la Geltrú" <contacte@estemapuntvng.cat>',
     replyTo: 'cupdevilanova@gmail.com',
     to: `"${name}" ${email}`,
-    bcc: 'cupdevilanova@gmail.com, oriol.castroarnau@gmail.com',
+    bcc: 'cupdevilanova@gmail.com',
     subject: `Proposta de nom rebuda correctament`,
     html: `<div>
     <p>Moltes gràcies ${name} per la teva participació!</p>
