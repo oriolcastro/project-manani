@@ -125,6 +125,16 @@ class CandidatsForm extends Component {
             <Header as="h4">
               Dades de les persones per a l'espai d'acompanyament.
             </Header>
+            <p style={{ textAlign: 'justify' }}>
+              La CUP també vol construir un grup polític d’acompanyament sòlid,
+              ample i cohesionat que acompanyi la tasca de les nostres
+              representants polítiques i que els transmeti les idees i
+              requeriments del carrer i de les entitats. Per això, pots proposar
+              persones per al grup d’acompanyament que, encara que no vulguin
+              anar a la llista, tinguin interès a pensar i dur a terme la
+              política local de manera solidària, d’esquerres i independentista
+              i acompanyar-nos en aquest procés de canvi.
+            </p>
             <Form.Group widths="equal">
               <Form.TextArea
                 label="Nom, cognoms i correu electrònic"
@@ -133,7 +143,7 @@ class CandidatsForm extends Component {
                 value={this.state.equipAcompanyament}
                 onChange={this.handleChange}
                 required
-                autoHeight
+                rows="4"
               />
             </Form.Group>
             <Form.Field

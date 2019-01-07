@@ -99,7 +99,7 @@ class MarcaForm extends Component {
               value={this.state.marca}
               onChange={this.handleChange}
               required
-              autoHeight
+              rows="4"
             />
 
             <Form.Field

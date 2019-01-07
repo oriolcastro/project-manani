@@ -49,9 +49,7 @@ const Hero = () => (
                 size="large"
                 style={{ marginBottom: '28px' }}
               >
-                <Button.Content>
-                  Propostes pel nom de la candidatura
-                </Button.Content>
+                <Button.Content>Proposa noms per la candidatura</Button.Content>
               </Button>
             </AnchorLink>
           </Grid.Column>
