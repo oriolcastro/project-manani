@@ -22,7 +22,7 @@ class MarcaForm extends Component {
     const data = this.state
     console.log(data)
     axios
-      .post('.netlify/functions/send_marca_mail', {
+      .post('.netlify/functions/send_marca_email', {
         name: data.name,
         email: data.email,
         marca: data.marca,
